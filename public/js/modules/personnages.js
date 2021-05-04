@@ -1,12 +1,12 @@
-import {Boss, Guerrier, Mage, Archer} from "./classe.js";
+import { Boss, Guerrier, Mage, Archer } from "./classe.js";
+
 
 let totalpv = 1200;
 let totalpa = 300;
 
 //Heros
-
 //Guerrier
-//PV
+//Initialisation PV
 let pointDeVieGuerrier = +prompt(`Tu as un total de ${totalpv}pv. Combien de pv veux-tu allouer à ton guerrier?`);
 if (pointDeVieGuerrier > 1200) {
     while (pointDeVieGuerrier > 1200) {
@@ -22,7 +22,7 @@ if (pointAttaqueGuerrier > 300) {
 }
 
 //Creation Objet Guerrier
-export let guerrier = new Guerrier (prompt("Comment veux-tu nommer votre guerrier?"), pointDeVieGuerrier, pointAttaqueGuerrier, 0);
+export let guerrier = new Guerrier(prompt("Comment veux-tu nommer votre guerrier?"), pointDeVieGuerrier, pointAttaqueGuerrier, 0);
 
 totalpv -= pointDeVieGuerrier;
 totalpa -= pointAttaqueGuerrier;
@@ -39,7 +39,7 @@ if (pointAttaqueMage > totalpa) {
     pointAttaqueMage = +prompt(`Il ne te reste pas assez de pa pour en donner autant à ton mage. Rentre une valeur en dessous de ${totalpa}.`);
 }
 //Mana
-let temp = Math.ceil(Math.random()*3);
+let temp = Math.ceil(Math.random() * 3);
 let mana;
 switch (temp) {
     case 1:
@@ -55,7 +55,7 @@ switch (temp) {
         break;
 }
 
-export let mage = new Mage (prompt("Comment veux-tu nommer ton Mage?"), pointDeVieMage, pointAttaqueMage, mana);
+export let mage = new Mage(prompt("Comment veux-tu nommer ton Mage?"), pointDeVieMage, pointAttaqueMage, mana);
 
 totalpv -= pointDeVieMage;
 totalpa -= pointAttaqueMage;
@@ -73,12 +73,12 @@ if (pointAttaqueArcher > totalpa) {
 }
 //Fleches
 let flechesRandom = [7, 8, 9, 10, 11];
-temp = Math.round(Math.random()*4);
+temp = Math.round(Math.random() * 4);
 let fleches = flechesRandom[temp];
 
 export let archer = (prompt("Comment veux-tu nommer ton Mage?"), pointDeVieArcher, pointAttaqueArcher, fleches);
 
 //Boss
-export let sauron = new Boss ("Sauron", 1200, 300);
-export let chronos = new Boss ("Chronos", 2000, 400);
-export let lilith = new Boss ("Lilith", 2400, 500);
+export let sauron = new Boss("Sauron", 1200, 300);
+export let chronos = new Boss("Chronos", 2000, 400);
+export let lilith = new Boss("Lilith", 2400, 500);
