@@ -1,0 +1,1 @@
+//While everyone's pv > 0
