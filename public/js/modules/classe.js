@@ -93,10 +93,30 @@ export class Guerrier extends Hero {
     }
 }
 
-export class Mage {
+export class Mage extends Hero {
     constructor(nom, pv, pa, mana) {
         super(nom, pv, pa),
         this.mana = mana
     }
-    
+    pointsMana(){
+        if (this.mana > 0) {
+            this.mana -= 2;
+        } else {
+            this.mana = 7;
+        }
+    }
+}
+
+export class Archer extends Hero {
+    constructor(nom, pv, pa, fleches) {
+        super(nom, pv, pa),
+        this.fleches = fleches
+    }
+    nbreFleche(){
+        if (this.fleches>0) {
+            this.fleches -= 1;
+        } else {
+            this.fleches = 6;
+        }
+    }
 }
