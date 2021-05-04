@@ -57,7 +57,7 @@ export class Boss {
     }
 }
 
-class hero {
+class Hero {
     constructor(nom, pv, pa) {
         this.nom = nom,
             this.pv = pv,
