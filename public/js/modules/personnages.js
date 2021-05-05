@@ -1,22 +1,22 @@
 import { Boss, Guerrier, Mage, Archer } from "./classe.js";
 
 
-let totalpv = 1200;
-let totalpa = 300;
+let totalpv = 3000;
+let totalpa = 400;
 
 //Heros
 //Guerrier
 //Initialisation PV
 let pointDeVieGuerrier = +prompt(`Tu as un total de ${totalpv}pv. Combien de pv veux-tu allouer à ton guerrier?`);
-if (pointDeVieGuerrier > 1200) {
-    while (pointDeVieGuerrier > 1200) {
+if (pointDeVieGuerrier > totalpv) {
+    while (pointDeVieGuerrier > totalpv) {
         pointDeVieGuerrier = +prompt("Tu n'as pas assez de points de vie. Rentre une valeur plus petite");
     }
 }
 //PA
 let pointAttaqueGuerrier = +prompt(`Tu as un total de ${totalpa}pa. Combien de pa veux-tu allouer à ton guerrier?`);
-if (pointAttaqueGuerrier > 300) {
-    while (pointAttaqueGuerrier > 300) {
+if (pointAttaqueGuerrier > totalpa) {
+    while (pointAttaqueGuerrier > totalpa) {
         pointAttaqueGuerrier = +prompt("Tu n'as pas assez de points d'attaque. Rentre une valeur plus petite");
     }
 }
@@ -76,7 +76,7 @@ let flechesRandom = [7, 8, 9, 10, 11];
 temp = Math.round(Math.random() * 4);
 let fleches = flechesRandom[temp];
 
-export let archer = (prompt("Comment veux-tu nommer ton Mage?"), pointDeVieArcher, pointAttaqueArcher, fleches);
+export let archer = new Archer (prompt("Comment veux-tu nommer ton Archer?"), pointDeVieArcher, pointAttaqueArcher, fleches);
 
 //Boss
 export let sauron = new Boss("Sauron", 1200, 300);

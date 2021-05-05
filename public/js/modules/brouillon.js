@@ -1,0 +1,3 @@
+let perso = function (hero) {
+    
+}

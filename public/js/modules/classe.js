@@ -58,18 +58,21 @@ export class Boss {
 }
 
 class Hero {
-    constructor(nom, pv, pa) {
+    constructor(nom, pv, pa, posture) {
         this.nom = nom,
             this.pv = pv,
-            this.pa = pa
+            this.pa = pa,
+            this.posture = "normal"
     }
     posture_attaque() {
         this.pa = this.pa * 1.4;
         this.pv = this.pv * 0.75;
+        this.posture = "attaque"
     }
     posture_defense() {
         this.pa = this.pa * 0.5;
         this.pv = this.pv * 2.5;
+        this.posture = "defense"
     }
 }
 
@@ -81,7 +84,7 @@ export class Guerrier extends Hero {
     rage() {
         let temp;
         if (this.pr < 4) {
-            this.pr +=1
+            this.pr +=1;
         } else if (this.pr == 4) {
             temp = this.pa;
             this.pa *= 1.25;
