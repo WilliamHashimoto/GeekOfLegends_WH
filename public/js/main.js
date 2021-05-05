@@ -73,6 +73,9 @@ function combat() {
 
         // Attaques des héros
         if (guerrier.pv > 0) {
+            if (guerrier.rage == 4) {
+                alert(`${guerrier.nom} est enragé. Son attaque augmente durant un tour!`)
+            }
             alert(`${guerrier.nom} attaque ${boss.nom}`);
             boss.pv -= guerrier.pa;
             alert(`${boss.nom} perd ${guerrier.pa} points de vie. Il lui reste ${boss.pv}pv`);
@@ -129,5 +132,8 @@ function combat() {
 }
 
 chooseBoss()
+let bossNom = document.getElementById('bossNom');
+let text = document.createTextNode(boss.nom);
+bossNom.appendChild(text);
 posture()
 combat()

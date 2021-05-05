@@ -1,3 +1,0 @@
-let perso = function (hero) {
-    
-}
